@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class Palindromo {
+
+    public static void main(String[] args) {
+        String pal = MyIO.readLine();
+        boolean resp;
+
+        while (!pal.equals("FIM")) {
+            resp = func(pal);
+
+            if (func(pal))
+                MyIO.println("SIM");
+            else
+                MyIO.println("NAO");
+
+            pal = MyIO.readLine();
+        }
+
+    }
+
+    public static boolean func(String pal) {
+
+        for (int i = 0; i < pal.length() / 2; i++) {
+            if (pal.charAt(i) != pal.charAt(pal.length() - 1 - i))
+                return false;
+
+        }
+
+        return true;
+    }
+
+}
